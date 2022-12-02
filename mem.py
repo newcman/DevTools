@@ -1,12 +1,14 @@
 # coding=UTF-8
 # 内存相关
 import os
+import time
+import sys
 
 
 def meminfoSimple(package):
     # cmd = "adb  shell dumpsys meminfo " + package + " | grep -E 'Dalvik Heap|Activities|Private'"
     # os.system(cmd)
-    meminfo(package, "Dalvik Heap|Activities|Private")
+    meminfo(package, "Dalvik Heap|Activities|Private|Native Heap")
 
 
 def meminfoAll(package):
@@ -40,6 +42,7 @@ def loop(times):
         loop_time = loop_time + 1
         print("loop " + str(loop_time))
         meminfoSimple("com.baidu.haokan")
+        time.sleep(2)
 
 
 def test():
@@ -49,4 +52,10 @@ def test():
     # mem.meminfoAll("")
     # adb  shell dumpsys meminfo  | grep -E 'Total|com.baidu.haokan'
     # mem.meminfo("", "Total|com.baidu.haokan")
-    loop(5)
+    loop(500)
+
+
+if __name__ == '__main__':
+    print("hi python")
+    test()
+

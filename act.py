@@ -30,10 +30,15 @@ def test():
     """
     打印activity和Task相关
     """
-    # act("com.baidu.haokan", 'com.baidu.haokan')
+    #act("com.baidu.haokan", 'com.baidu.haokan')
     # act("com.yy.mobile.union.haokan", 'com.yy.mobile.union.haokan')
+
     """
      # adb shell dumpsys activity top | grep -E 'ACTIVITY|Added Fragments|Active Fragments|id=|mContainer=' |  grep -v 'mParent'
      打印activity和fragment的层级关系
     """
     actTop("ACTIVITY|Added Fragments|Active Fragments|id=|mContainer=", "mParent")
+
+if __name__ == '__main__':
+    print("hi python")
+    test()
